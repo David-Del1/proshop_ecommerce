@@ -1,0 +1,23 @@
+{
+  "name": "proshop_ecommerce",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/David-Del1/proshop_ecommerce.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/David-Del1/proshop_ecommerce/issues"
+  },
+  "homepage": "https://github.com/David-Del1/proshop_ecommerce#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
