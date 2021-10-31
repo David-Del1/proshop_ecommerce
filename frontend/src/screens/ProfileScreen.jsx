@@ -17,7 +17,8 @@ const ProfileScreen = ({ location, history }) => {
 
   const userDetails = useSelector(state => state.userDetails);
   const { loading, error, user } = userDetails;
-  const userLogin = useSelector(state => state.userDetails);
+
+  const userLogin = useSelector(state => state.userLogin);
   const { userInfo } = userLogin;
 
   useEffect(() => {
@@ -31,7 +32,7 @@ const ProfileScreen = ({ location, history }) => {
         setEmail(user.email);
       }
     }
-  }, [dispatch, history, userInfo]);
+  }, [dispatch, history, userInfo, user]);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -72,7 +73,7 @@ const ProfileScreen = ({ location, history }) => {
           ></Form.Control>
         </Form.Group>
         <Form.Group controlId='confirm password'>
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Confirm Password</Form.Label>
           <Form.Control type="password" placeholder="Confirm Password" value={confirmPassword}
             onChange={e => setConfirmPassword(e.target.value)}
           ></Form.Control>
