@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cartActions';
+import CheckoutSteps from '../components/CheckoutSteps';
 import FormContainer from '../components/FormContainer';
 
 const ShippingScreen = ({ history }) => {
@@ -11,19 +12,20 @@ const ShippingScreen = ({ history }) => {
 
   const [address, setAddress] = useState(shippingAddress.address)
   const [city, setCity] = useState(shippingAddress.city)
-  const [zipCode, setZipCode] = useState(shippingAddress.zipCode)
+  const [postalCode, setPostalCode] = useState(shippingAddress.postalCode)
   const [country, setCountry] = useState(shippingAddress.country)
 
   const dispatch = useDispatch()
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(saveShippingAddress({ address, city, zipCode, country}));
+    dispatch(saveShippingAddress({ address, city, postalCode, country}));
     history.push('/payment');
   }
 
   return (
     <FormContainer>
+      <CheckoutSteps step1 step2 />
       <h1>Shipping</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
@@ -52,8 +54,8 @@ const ShippingScreen = ({ history }) => {
           <Form.Control 
             type="text" 
             placeholder="Enter ZIP Code" 
-            value={zipCode}
-            onChange={e => setZipCode(e.target.value)}
+            value={postalCode}
+            onChange={e => setPostalCode(e.target.value)}
             required
           ></Form.Control>
         </Form.Group>

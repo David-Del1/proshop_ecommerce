@@ -10,6 +10,8 @@ import LoginScreen from '../screens/LoginScreen.jsx';
 import RegisterScreen from '../screens/RegisterScreen';
 import ProfileScreen from '../screens/ProfileScreen';
 import ShippingScreen from '../screens/ShippingScreen';
+import PaymentScreen from '../screens/PaymentScreen';
+import PlaceOrderScreen from '../screens/PlaceOrderScreen';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
       <main className="py-3">
         <Container>
           <Route path='/shipping' component={ShippingScreen} exact />
+          <Route path='/payment' component={PaymentScreen} exact />
+          <Route path='/placeorder' component={PlaceOrderScreen} exact />
           <Route path='/login' component={LoginScreen} exact />
           <Route path='/register' component={RegisterScreen} exact />
           <Route path='/profile' component={ProfileScreen} exact />
